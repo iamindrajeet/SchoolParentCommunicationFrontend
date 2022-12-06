@@ -1,0 +1,136 @@
+<!-- <form novalidate [formGroup]="reportCard">
+    <label>
+      <span>Full name</span>
+      <input
+        type="text"
+        placeholder="Your full name"
+        formControlName="name">
+    </label>
+    <div formGroupName="account">
+      <label>
+        <span>Email address</span>
+        <input
+          type="email"
+          placeholder="Your email address"
+          formControlName="email">
+      </label>
+      <label>
+        <span>Confirm address</span>
+        <input
+          type="email"
+          placeholder="Confirm your email address"
+          formControlName="confirm">
+      </label>
+    </div>
+    <button type="submit">Sign up</button>
+  </form> -->
+
+
+  <!-- <div class="container col-md-6 offset-md-3">
+    <h3>Add Report Card</h3>
+    <div class="row">
+      <div class="col-sm-4">
+        <div [hidden]="submitted" style="width: 400px">
+          <form [formGroup]="reprtCardForm" #saveparent (ngSubmit)="saveParent()">
+            <div class="form-group">
+              <label for="name">Student ID</label>
+              <input type="text" class="form-control" formControlName="student_id" data-toggle="tooltip"
+                data-placement="right" title="Enter Student ID" />
+              <div class="alert alert-danger" *ngIf="StudentID.touched && StudentId.invalid" style="margin-top: 5px">
+                <span *ngIf="StudentId.errors.required">Student ID is Required</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Parent Name</label>
+              <input type="text" class="form-control" formControlName="parent_name" data-toggle="tooltip"
+                data-placement="right" title="Enter Parent Name" />
+              <div class="alert alert-danger" *ngIf="ParentName.touched && ParentName.invalid" style="margin-top: 5px">
+                <span *ngIf="ParentName.errors.required">Parent Name is Required</span>
+                <span *ngIf="ParentName.errors.minlength"> MinLength Error </span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="name">IsAttempted</label>
+              <select class="form-control" id="present" formControlName="isAttempted" name="present">
+                <option value="true" >Present</option>
+                <option value="false">Absent</option>
+            </select>
+              <input type="text" class="form-control" formControlName="parent_contact" data-toggle="tooltip"
+                data-placement="right" title="Enter Parent Contact" />
+              <div class="alert alert-danger" *ngIf="ParentContact.touched && ParentContact.invalid"
+                style="margin-top: 5px">
+                <span *ngIf="ParentContact.errors.required">parent Contact is Required</span>
+                <span *ngIf="ParentContact.errors.maxlength">
+                  Maxlength for Mobile Number
+                </span>
+              </div>
+            </div>
+            <div formArrayName="students">
+              <h4>Student Id:</h4>
+              <button class="btn btn-default" type="button" (click)="onAddId()">
+                Add Student ID
+              </button>
+              <div class="form-group" *ngFor="let studentcontrol of getControls(); let i = index">
+                <input type="text" class="form-control" [formControlName]="i" />
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-success">Submit</button>
+              <a [routerLink]="'/admin/dashboard'"><button class="btn btn-success float-right">Back</button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="submitted">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div>
+          <h4>Parent Added SuccessFully!!</h4>
+          <button (click)="addParentForm()" class="btn btn-success">
+            Add More Student
+          </button>
+          <a [routerLink]="'/admin/dashboard'"><button class="btn btn-primary float-right">Back</button></a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- template driven Form -->
+
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Add ReportCard </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="student" [(ngModel)]="sId" name="student">
+        </div>
+
+        <div class="form-group">
+            <label> Attempted Exam?</label>
+            <select class="form-control" id="present" [(ngModel)]="reportCard.isAttempted" name="present">
+                <option value="true" >Present</option>
+                <option value="false">Absent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label> Marksheet</label>
+            <div *ngFor="let item of myStringArray">
+                <label>{{item}}</label><br>
+                <input name="value" class="form-control" [ngModel]="map.get(item)" (ngModelChange)="map.set(item, $event)">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+        </div>
+    </form>
+</div>
+
+

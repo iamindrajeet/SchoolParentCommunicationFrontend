@@ -1,0 +1,49 @@
+<div class="container col-md-6 offset-md-3">
+  <h3>Add Teacher</h3>
+  <form #myform="ngForm" (ngSubmit)="onAddTeacher(myform)">
+    <div class="form-group">
+      <label> Name </label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="teacher.name" name="name" #name='ngModel' required
+        minlength="5" pattern="^[a-z A-Z]+$" />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert text-danger font-weight-normal">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 5 characters long.
+        </div>
+        <div *ngIf="name.errors.pattern">
+          Please give alphabets.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label> Subject Name </label>
+      <select class="form-control" id="subjectName" [(ngModel)]="teacher.subject" name="subjectName" required
+        #subjectName='ngModel'>
+        <option value="ENGLISH">ENGLISH</option>
+        <option value="HINDI">HINDI</option>
+        <option value="MATHS">MATHS</option>
+        <option value="SOCIAL_STUDIES">SOCIAL_STUDIES</option>
+        <option value="SCIENCE">SCIENCE</option>
+        <option value="HISTORY_CIVICS">HISTORY_CIVICS</option>
+        <option value="GEOGRAPHY">GEOGRAPHY</option>
+      </select>
+      <div *ngIf="subjectName.invalid && (subjectName.dirty || subjectName.touched)"
+        class="alert text-danger font-weight-normal">
+        <div *ngIf="subjectName.errors.required">
+          Subject is required.
+        </div>
+      </div>
+
+    </div>
+
+    <button
+      [disabled]="!myform.valid"
+      class="btn btn-success" type="submit">Submit</button>
+    <button class="btn btn-success float-right" [routerLink]="'/admin/dashboard'">
+      Back
+    </button>
+  </form>
+</div>

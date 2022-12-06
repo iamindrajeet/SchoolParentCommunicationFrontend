@@ -1,0 +1,57 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Add Fee </h3>
+    <form #myform="ngForm" (ngSubmit)="updateFee(myform)">
+
+        <div class="form-group">
+            <label> Fee Id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="fee.id"
+            #feeId="ngModel" name="feeId" required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="feeId.invalid && (feeId.dirty || feeId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="feeId.errors.required">Fee ID is required</div>
+                <div *ngIf="feeId.errors.pattern">Fee ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Fee Paid</label>
+            <input type="text" class="form-control" id="feePaid" [(ngModel)]="fee.feePaid" #feePaid="ngModel"
+                name="feePaid" required pattern="^[0-9]{1,5}" maxlength="5">
+            <div *ngIf="feePaid.invalid && (feePaid.dirty || feePaid.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="feePaid.errors.required">Add Fee here</div>
+                <div *ngIf="feePaid.errors.pattern">Add Valid fee</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Fee Due</label>
+            <input type="text" class="form-control" id="feeDue" [(ngModel)]="fee.feeDue" #feeDue="ngModel" name="feeDue"
+                required pattern="^[0-9]{1,5}" maxlength="5">
+            <div *ngIf="feeDue.invalid && (feeDue.dirty || feeDue.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="feeDue.errors.required">Add Due Fee here</div>
+                <div *ngIf="feeDue.errors.pattern">Add Valid fee</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="student" #studentId="ngModel" name="studentId"
+                required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="studentId.invalid && (studentId.dirty || studentId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="studentId.errors.required">Student ID is required</div>
+                <div *ngIf="studentId.errors.pattern">Student ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col"> <button [disabled]="!myform.valid" class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><a [routerLink]="'/accountant/dashboard'"> <button
+                        class="btn btn-success float-right">Back</button></a></div>
+        </div>
+    </form>
+</div>

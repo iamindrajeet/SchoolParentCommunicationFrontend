@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="container" id="addUpdateButtons">
+    <div class="row">
+      <a [routerLink]="'/admin/teacher/add'"><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a>
+      <a [routerLink]="'/admin/teacher/update'"><button type="button" class="btn btn-success ml-3">UPDATE</button></a>
+    </div>
+  </div>
+  <div class="container" id="backButton">
+    <a [routerLink]="'/admin/dashboard'"><button type="button" class="btn btn-primary">BACK</button></a>
+  </div>
+</div>
+
+<!-- <body style="background-color: rgb(154, 177, 202)"> -->
+<div class="design">
+  <br />
+  <div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let teacher of teachers" class="col-md-6 col-xl-3">
+        <div class="card m-b-30">
+          <div class="card-body row">
+            <div class="col-6">
+              <img src="../../assets/teacher.png" alt="" class="img-fluid rounded-circle w-50" />
+            </div>
+            <div class="col-6 card-title align-self-center mb-0">
+              <h3>{{ teacher.name }}</h3>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-book float-right"></i>Subject :
+              {{ teacher.subject }}
+            </li>
+            <li class="list-group-item" *ngIf="teacher.standard.grade"><i
+                class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
+            </li>
+          </ul>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </body> -->

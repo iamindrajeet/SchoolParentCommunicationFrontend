@@ -1,0 +1,39 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Add Daily Diary </h3>
+    <form #myform="ngForm" (ngSubmit)="addDiary(myform)">
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="Student" [(ngModel)]="sId"
+            #studentId="ngModel" name="studentId" required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="studentId.invalid && (studentId.dirty || studentId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="studentId.errors.required">Student ID is required</div>
+                <div *ngIf="studentId.errors.pattern">Student ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Diary Date</label>
+            <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="generatedDate" [(ngModel)]="diary.generatedDate"
+            #generatedDate="ngModel" name="generatedDate" required >
+            <div *ngIf="generatedDate.invalid && (generatedDate.dirty || generatedDate.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="generatedDate.errors.required">Date is required</div>
+                <div *ngIf="generatedDate.errors.pattern">Enter Valid Date</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Remarks</label>
+            <input type="text" class="form-control" id="present" [(ngModel)]="diary.remark" name="present" required>
+        </div>
+
+        <div class="row">
+            <div class="col"> <button [disabled]="!myform.valid" class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><a [routerLink]="'/teacher/dashboard'"><button class="btn btn-success float-right">Back</button></a></div>
+        </div>
+    </form>
+</div>

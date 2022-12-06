@@ -1,0 +1,49 @@
+<div class="login-page">
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+        <div class="card-body">
+          <h4 class="title text-center mt-4 font-weight-bold">
+            Login into account
+          </h4>
+          <form class="form-box px-3" (ngSubmit)="onSubmit()">
+            <div class="form-input">
+              <span> <i class="fas fa-user"></i></span>
+              <input [(ngModel)]="credentials.username" #userId="ngModel" type="text" name="userid" id="userid" required
+                placeholder="User ID" tabindex="10" />
+            </div>
+            <div *ngIf="userId.invalid && (userId.dirty || userId.touched)"
+              class="alert text-danger font-weight-normal">
+              <div *ngIf="userId.errors.required">User ID is required</div>
+            </div>
+            <div class="form-input">
+              <span> <i class="fa fa-key"></i></span>
+              <input [(ngModel)]="credentials.password" #password="ngModel" type="password" name="password"
+                id="password" required placeholder="Password" tabindex="10" />
+            </div>
+            <div *ngIf="password.invalid && ( password.dirty || password.touched )"
+              class="alert text-danger font-weight-normal">
+              <div *ngIf="password.errors.required">Password is required</div>
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-block btn-success text-uppercase">
+                Login
+              </button>
+            </div>
+            <div class="text-right">
+              <a [routerLink]="'/forgot-password'" class="forget-link">Forgot password/user ID?</a>
+            </div>
+            <hr class="my-4" />
+            <div class="text-center mb-2">
+              Don't have an account?
+              <a [routerLink]="'/admin/register'" class="register-link">Register</a>
+            </div>
+          </form>
+          <br />
+          <!-- <p class="mt">{{credentials | json }}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

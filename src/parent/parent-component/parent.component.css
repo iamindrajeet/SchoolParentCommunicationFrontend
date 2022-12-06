@@ -1,0 +1,112 @@
+.container-fluid{
+  background-color: #e1e5ea;
+  padding: 1%;
+}
+.container#container1{
+  margin: 3% 2% 3% 2%;
+  border-radius: 10px;
+  width: 30%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ff8303;
+}
+
+.container#container2{
+  margin: 3% 2% 5% 2%;
+  border-radius: 10px;
+  width: 30%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ff8303;
+}
+
+.container#attendance{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container#diary{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container#exam{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container#fee{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container#reportCard{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container#concern{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+::placeholder {
+  color: #aaaaaa;
+  font-weight: 300;
+}
+
+.card {
+  border-radius: 10px;
+}

@@ -1,0 +1,15 @@
+.container {
+  margin: 2% 5% 5% 16%;
+}
+.card {
+  box-shadow: 5px 2px 5px gray;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 1px 1px 16px gray;
+}
+
+.container-fluid {
+    padding: 2%;
+  background-color: #e1e5ea;
+}

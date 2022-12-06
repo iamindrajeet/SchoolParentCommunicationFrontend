@@ -1,0 +1,35 @@
+<div class="container col-md-6 offset-md-3">
+  <h3>Add Parent</h3>
+  <form #myform='ngForm' (ngSubmit)="onAddParent()">
+    <div class="form-group">
+      <label> Name </label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="parent.name" name="name" required minlength="5"
+        pattern="^[a-z A-Z]+$" #name="ngModel" />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert text-danger font-weight-normal">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 5 characters long.
+        </div>
+        <div *ngIf="name.errors.pattern">
+          Please give alphabets.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Contact No </label>
+      <input type="tel" class="form-control" id="contact" [(ngModel)]="parent.contact" name="contact" 
+       required  #contact="ngModel"/>
+      <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="alert text-danger font-weight-normal">
+        <div *ngIf="contact.errors.required">
+          Contact is required.
+        </div>
+      </div>
+    </div>
+    <div>
+      <button [disabled]='!myform.valid' class="btn btn-success" type="submit">Add</button>
+      <a [routerLink]="'/admin/dashboard'"><button class="btn btn-success float-right">Back</button></a>
+    </div>
+  </form>
+</div>

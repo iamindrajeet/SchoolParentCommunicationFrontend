@@ -1,0 +1,53 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Update Attendance </h3>
+    <form #myform="ngForm" (ngSubmit)="updateAttendance(myform)">
+
+        <div class="form-group">
+            <label> Attendance Id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="attendance.id" 
+            #attendanceId="ngModel" name="attendanceId" required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="attendanceId.invalid && (attendanceId.dirty || attendanceId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="attendanceId.errors.required">Attendance ID is required</div>
+                <div *ngIf="attendanceId.errors.pattern">Attendance ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="Student" [(ngModel)]="sId" 
+            #studentId="ngModel" name="studentId" required pattern="^[0-9]+$">
+            <div *ngIf="studentId.invalid && (studentId.dirty || studentId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="studentId.errors.required">Student ID is required</div>
+                <div *ngIf="studentId.errors.pattern">Student ID must be less then or eqaul to 3 digits</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Attendance Date</label>
+            <input type="text" class="form-control" id="attendanceDate" placeholder="yyyy-mm-dd" [(ngModel)]="attendance.attendanceDate"
+            #attendanceDate="ngModel" name="attendanceDate" required >
+            <div *ngIf="attendanceDate.invalid && (attendanceDate.dirty || attendanceDate.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="attendanceDate.errors.required">Date Required</div>
+                <div *ngIf="attendanceDate.errors.pattern">Enter Valid</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Attendance Status</label>
+            <select class="form-control" id="present" [(ngModel)]="attendance.present" name="present" required>
+                <option value="true" >Present</option>
+                <option value="false">Absent</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col"> <button [disabled]="!myform.valid" class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><a [routerLink]="'/teacher/dashboard'"><button class="btn btn-success float-right">Back</button></a></div>
+        </div>
+    </form>
+</div>

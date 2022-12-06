@@ -1,0 +1,9 @@
+<h2>Exam Details</h2>
+<p> <strong>Exam scheduled for - </strong> {{ exam.examDate | date: "dd-MM-yyyy" }}</p>
+<p> <strong>Total marks - </strong> {{ exam.marks }}</p>
+<div *ngFor="let standard of exam.standard">
+  <p> <strong>Grade - </strong> {{ standard.grade }}</p>
+</div>
+<p> <strong>Subject - </strong> {{ exam.subject }}</p>
+<p> <strong>Duration - </strong> {{ exam.duration }}</p>
+

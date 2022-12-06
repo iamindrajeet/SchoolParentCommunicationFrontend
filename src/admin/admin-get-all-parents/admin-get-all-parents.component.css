@@ -1,0 +1,51 @@
+.design {
+  background-color: rgb(154, 177, 202);
+}
+
+.container-fluid {
+  background-color: rgb(154, 177, 202);
+  padding: 1%;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container#addUpdateButtons {
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 15%;
+  margin: 2% 3% 2% 12.7%;
+  padding: 1%;
+  background-color: white;
+}
+
+.container#addUpdateButtons:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container#backButton {
+  position: absolute;
+  top: 8.5%;
+  right: 10.5%;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 6.5%;
+  margin: 2% 3% 2% 81%;
+  padding: 1%;
+  background-color: white;
+}
+
+.container#backButton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

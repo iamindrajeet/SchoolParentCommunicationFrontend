@@ -1,0 +1,292 @@
+<!-- <button (click)='onClickAttendance()'>Show Attendance</button>
+<button (click)='onClickDailyDiary()'>Show Daily Diary</button>
+<button (click)='onClickExam()'>Exam Details</button>
+<button (click)='onClickFee()'>Show Fee Details</button>
+<button (click)='onClickReportCard()'>Show Report Card</button>
+<button (click)='onClickAddConcern()'>Add Concern</button> -->
+<div class="container-fluid">
+  <h1 class="ml-5 mt-4 font-weight-bold">Get all necessary details here</h1>
+  <div class="container bg-primary" id="container1">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Attendance details
+            </button>
+          </h2>
+        </div>
+
+        <div
+          id="collapseOne"
+          class="collapse"
+          aria-labelledby="headingOne"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="number"
+              placeholder="Student ID"
+              class="form-control"
+              name="StudentID"
+              [(ngModel)]="studentId"
+              required
+            />
+            <button
+              (click)="onClickAttendance()"
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Daily diary details
+            </button>
+          </h2>
+        </div>
+        <div
+          id="collapseTwo"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="number"
+              placeholder="Student ID"
+              class="form-control"
+              required
+              [(ngModel)]="studentId"
+            />
+            <button
+              (click)="onClickDailyDiary()"
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Exam details
+            </button>
+          </h2>
+        </div>
+        <div
+          id="collapseThree"
+          class="collapse"
+          aria-labelledby="headingThree"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="date"
+              placeholder="Date in yyyy-mm-dd"
+              class="form-control"
+              [(ngModel)]="examDate"
+            />
+            <button
+              (click)="onClickExam()"
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseFour"
+              aria-expanded="true"
+              aria-controls="collapseFour"
+            >
+              Fee details
+            </button>
+          </h2>
+        </div>
+
+        <div
+          id="collapseFour"
+          class="collapse"
+          aria-labelledby="headingFour"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="number"
+              placeholder="Student ID"
+              class="form-control"
+              required
+              [(ngModel)]="studentId"
+            />
+            <button
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+              (click)="onClickFee()"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseFive"
+              aria-expanded="true"
+              aria-controls="collapseFive"
+            >
+              Report card details
+            </button>
+          </h2>
+        </div>
+
+        <div
+          id="collapseFive"
+          class="collapse"
+          aria-labelledby="headingFive"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="number"
+              placeholder="Student ID"
+              class="form-control"
+              [(ngModel)]="studentId"
+            />
+            <button
+              (click)="onClickReportCard()"
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="ml-5 font-weight-bold">Want to raise a concern?</h1>
+  <div class="container bg-primary" id="container2">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingSix">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link btn-block text-left"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseSix"
+              aria-expanded="true"
+              aria-controls="collapseSix"
+            >
+              Raise a concern
+            </button>
+          </h2>
+        </div>
+
+        <div
+          id="collapseSix"
+          class="collapse"
+          aria-labelledby="headingSix"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <input
+              type="number"
+              placeholder="Parent ID"
+              class="form-control"
+              [(ngModel)]="parentID"
+            />
+            <select
+              name="concernType"
+              id="concernType"
+              class="form-control mt-2"
+              [(ngModel)]="concernType"
+            >
+              <option value="0">Select</option>
+              <option value="ACADEMIC">Academic</option>
+              <option value="ATTENDANCE">Attendance</option>
+              <option value="PERFORMANCE">Performance</option>
+              <option value="FEES">Fees</option>
+            </select>
+            <input
+              type="text"
+              placeholder="What is your concern?"
+              class="form-control mt-2"
+              [(ngModel)]="concern"
+            />
+            <button
+              type="submit"
+              class="btn btn-sm btn-success text-uppercase mt-2"
+              (click)="onClickAddConcern()"
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container bg-success" id="attendance" *ngIf="showAttendance">
+        <app-get-attendance></app-get-attendance>
+      </div>
+      <div class="container bg-success" id="diary" *ngIf="showDiary">
+        <app-get-daily-diary></app-get-daily-diary>
+      </div>
+      <div class="container bg-success" id="exam" *ngIf="showExam">
+        <app-get-exam></app-get-exam>
+      </div>
+      <div class="container bg-success" id="fee" *ngIf="showFee">
+        <app-get-fee></app-get-fee>
+      </div>
+      <div class="container bg-success" id="reportCard" *ngIf="showReportCard">
+        <app-get-report-card></app-get-report-card>
+      </div>
+      <div class="container bg-success" id="concern" *ngIf="showConcern">
+        <app-add-concern></app-add-concern>
+      </div>
+    </div>
+  </div>
+</div>

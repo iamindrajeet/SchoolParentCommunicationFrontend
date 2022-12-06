@@ -1,0 +1,50 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Update Daily Diary </h3>
+    <form #myform="ngForm" (ngSubmit)="updateDiary(myform)">
+
+        <div class="form-group">
+            <label> Diary Id</label>
+            <input type="text" class="form-control" id="diary" [(ngModel)]="diary.id"
+            #diaryId="ngModel" name="diaryId" required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="diaryId.invalid && (diaryId.dirty || diaryId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="diaryId.errors.required">Diary ID is required</div>
+                <div *ngIf="diaryId.errors.pattern">Diary ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="Student" [(ngModel)]="sId"
+            #studentId="ngModel" name="studentId" required pattern="^[0-9]+$" maxlength="3">
+            <div *ngIf="studentId.invalid && (studentId.dirty || studentId.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="studentId.errors.required">Student ID is required</div>
+                <div *ngIf="studentId.errors.pattern">Student ID must be in digits only</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Diary Date</label>
+            <input type="text" class="form-control" placeholder="yyyy-mm-dd" id="generatedDate" [(ngModel)]="diary.generatedDate"
+            #diaryDate="ngModel" name="diaryDate" required >
+            <div *ngIf="diaryDate.invalid && (diaryDate.dirty || diaryDate.touched)"
+                class="alert text-danger font-weight-normal">
+                <div *ngIf="diaryDate.errors.required">Student ID is required</div>
+                <div *ngIf="diaryDate.errors.pattern">Student ID must be less then or eqaul to 3 digits</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Remarks</label>
+            <input type="text" class="form-control" id="remark" [(ngModel)]="diary.remark" name="remark" required>
+        </div>
+
+        <div class="row">
+            <div class="col"> <button [disabled]='!myform.valid' class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><a [routerLink]="'/teacher/dashboard'"><button class="btn btn-success float-right">Back</button></a></div>
+        </div>
+    </form>
+</div>

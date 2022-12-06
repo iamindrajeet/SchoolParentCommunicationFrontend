@@ -1,0 +1,17 @@
+.design {
+  background-color: rgb(154, 177, 202);
+}
+
+.container-fluid {
+  background-color: rgb(154, 177, 202);
+  padding: 1%;
+}
+
+.card{
+  box-shadow: 2px 2px 5px gray;
+  transition: 0.5s;
+}
+
+.card:hover{
+  box-shadow: 1px 3px 16px gray;
+}

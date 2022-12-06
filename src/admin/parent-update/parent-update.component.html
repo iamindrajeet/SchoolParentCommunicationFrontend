@@ -1,0 +1,66 @@
+<div class="container col-md-6 offset-md-3">
+  <h3>Update Parent</h3>
+  <div class="row">
+    <div class="col-sm-4">
+      <div [hidden]="submitted" style="width: 400px">
+        <form [formGroup]="parentForm" #saveparent (ngSubmit)="saveParent(saveParent)">
+          <div class="form-group">
+            <label for="name">Parent ID</label>
+            <input type="text" class="form-control" formControlName="parent_id" data-toggle="tooltip"
+              data-placement="right" title="Enter Parent ID" />
+            <div class="alert alert-danger" *ngIf="ParentId.touched && ParentId.invalid" style="margin-top: 5px">
+              <span *ngIf="ParentId.errors.required">Parent ID is Required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Parent Name</label>
+            <input type="text" class="form-control" formControlName="parent_name" data-toggle="tooltip"
+              data-placement="right" title="Enter Parent Name" />
+            <div class="alert alert-danger" *ngIf="ParentName.touched && ParentName.invalid" style="margin-top: 5px">
+              <span *ngIf="ParentName.errors.required">Parent Name is Required</span>
+              <span *ngIf="ParentName.errors.minlength"> MinLength Error </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Parent Contact</label>
+            <input type="text" class="form-control" formControlName="parent_contact" data-toggle="tooltip"
+              data-placement="right" title="Enter Parent Contact" />
+            <div class="alert alert-danger" *ngIf="ParentContact.touched && ParentContact.invalid"
+              style="margin-top: 5px">
+              <span *ngIf="ParentContact.errors.required">parent Contact is Required</span>
+              <span *ngIf="ParentContact.errors.maxlength">
+                Maxlength for Mobile Number
+              </span>
+            </div>
+          </div>
+          <div formArrayName="students">
+            <h4>Student Id:</h4>
+            <button class="btn btn-default" type="button" (click)="onAddId()">
+              Add Student ID
+            </button>
+            <div class="form-group" *ngFor="let studentcontrol of getControls(); let i = index">
+              <input type="text" class="form-control" [formControlName]="i" />
+            </div>
+          </div>
+          <div>
+            <button  type="submit" class="btn btn-success">Submit</button>
+            <a [routerLink]="'/admin/dashboard'"><button class="btn btn-success float-right">Back</button></a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="submitted">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div>
+        <h4>Parent Added SuccessFully!!</h4>
+        <button (click)="addParentForm()" class="btn btn-success">
+          Add More Student
+        </button>
+        <a [routerLink]="'/admin/dashboard'"><button class="btn btn-primary float-right">Back</button></a>
+      </div>
+    </div>
+  </div>
+</div>

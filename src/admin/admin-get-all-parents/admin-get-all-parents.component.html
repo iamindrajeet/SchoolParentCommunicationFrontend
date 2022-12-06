@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="container" id="addUpdateButtons">
+    <div class="row">
+      <a [routerLink]="'/admin/parent/add'"><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a>
+      <a [routerLink]="'/admin/parent/update'"><button type="button" class="btn btn-success ml-3">UPDATE</button></a>
+    </div>
+  </div>
+  <div class="container" id="backButton">
+    <a [routerLink]="'/admin/dashboard'"><button type="button" class="btn btn-primary">BACK</button></a>
+  </div>
+</div>
+
+<div class="design">
+  <br />
+  <div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let parent of parents" class="col-md-6 col-xl-3">
+        <div class="card m-b-30 bg-muted">
+          <div class="card-body row">
+            <div class="col-6">
+              <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
+                alt="" class="img-fluid rounded-circle w-50" />
+            </div>
+            <div class="col-6 card-title align-self-center mb-0">
+              <h2>{{ parent.name }}</h2>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let student of parent.student">
+              <i class="fas fa-user-graduate float-right"></i>Student Name : {{ student.name }}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-phone float-right"></i>Phone :
+              {{ parent.contact }}
+            </li>
+          </ul>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+  <br />
+</div>

@@ -1,0 +1,29 @@
+#about-us {
+  margin-top: 30px;
+  margin-bottom: 155px;
+  /* background-color: #a7bbc7; */
+}
+form {
+  padding: 15px;
+}
+.social-media-icons {
+  margin: 50px;
+}
+.social-media {
+  margin-left: 30px;
+}
+a {
+  color: inherit;
+}
+#wp:hover {
+  color: green;
+}
+#fb:hover {
+  color: blue;
+}
+#tweet:hover {
+  color: blue;
+}
+#insta:hover {
+  color: tomato;
+}
